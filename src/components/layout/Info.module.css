@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+.title {
+  font-family: "Yeseva One", cursive;
+  text-align: center;
+  font-size: 4rem;
+  margin: 1.5rem auto 0;
+}
+
+.subtitle {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 auto;
+}

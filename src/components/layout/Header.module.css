@@ -1,0 +1,13 @@
+.container {
+  background-color: black;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px black;
+}
+
+.logo {
+  height: 7rem;
+  padding-inline-start: 1rem;
+}
