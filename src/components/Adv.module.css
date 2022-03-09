@@ -9,6 +9,7 @@
 .img,
 .imgOdd {
   margin: 0 2rem;
+  border: 1px solid black;
 }
 
 .text {

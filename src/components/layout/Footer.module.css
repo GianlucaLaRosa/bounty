@@ -1,0 +1,17 @@
+.footer {
+  height: 100px;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  color: white;
+  padding-top: 0.5rem;
+}
+
+.footer div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

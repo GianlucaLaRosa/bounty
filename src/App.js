@@ -1,16 +1,17 @@
-import Header from "./components/layout/Header";
-import Info from "./components/layout/Info";
-import Adv from "./components/layout/Adv";
+import Layout from "./components/layout/layout";
+import Home from "./components/Home";
+import NotFound from "./components/NotFound";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Info />
-      <Adv />
-      <Adv odd />
-      <Adv />
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   );
 }
 

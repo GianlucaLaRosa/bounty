@@ -1,0 +1,44 @@
+.main {
+  height: calc(100vh - (100px + 7rem));
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main img {
+  display: none;
+  margin: 0 2rem;
+  height: 25rem;
+  transform: rotateZ(165deg);
+  position: relative;
+  animation: empty 0.4s ease 2s 2;
+}
+
+@keyframes empty {
+  0% {
+    top: 0;
+  }
+  8% {
+    top: 85px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.main h2 {
+  font-size: 3rem;
+  margin: 0 2rem;
+  text-align: center;
+  flex-shrink: 2;
+}
+
+@media (min-width: 576px) {
+  .main img {
+    display: block;
+  }
+
+  .main h2 {
+    text-align: start;
+  }
+}
