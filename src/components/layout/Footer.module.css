@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  color: white;
+  color: #c9bb9f;
   padding-top: 0.5rem;
 }
 
@@ -14,4 +14,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.footer a {
+  color: #c9bb9f;
+}
+
+.footer a:hover {
+  color: white;
 }
