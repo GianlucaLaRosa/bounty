@@ -1,6 +1,7 @@
-import Layout from "./components/layout/layout";
-import Home from "./components/Home";
-import NotFound from "./components/NotFound";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Menu from "./pages/Menu";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -9,6 +10,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

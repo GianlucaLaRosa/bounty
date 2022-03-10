@@ -1,5 +1,5 @@
 import classes from "./Header.module.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.svg";
 import { GiKnifeFork } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
 import { Link } from "react-router-dom";

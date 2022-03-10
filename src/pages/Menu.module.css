@@ -1,0 +1,10 @@
+.sections {
+  text-align: center;
+  margin-top: 3rem;
+  width: 50%;
+}
+
+.sections li {
+  margin: 1rem;
+  list-style: none;
+}

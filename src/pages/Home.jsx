@@ -1,5 +1,5 @@
-import Info from "./Info";
-import Adv from "./Adv";
+import Info from "../components/Info";
+import Adv from "../components/Adv";
 
 function Home() {
   return (

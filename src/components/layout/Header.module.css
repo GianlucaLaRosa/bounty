@@ -11,7 +11,8 @@
 
 .logo {
   height: 7rem;
-  padding-inline-start: 1rem;
+  margin-inline-start: 1rem;
+  background-color: #c9bb9f;
 }
 
 .icon {
