@@ -3,14 +3,14 @@ import classes from "./Section.module.css";
 
 function Section(props) {
   const cssClass =
-    props.isVisible === props.id ? classes.activeTitle : classes.title;
+    props.isOpen === props.id ? classes.activeTitle : classes.title;
 
   return (
     <Card>
       <h2 onClick={props.onClick.bind(null, props.id)} className={cssClass}>
         {props.title.toUpperCase()}
       </h2>
-      {props.isVisible === props.id &&
+      {props.isOpen === props.id &&
         props.items.map(el => (
           <div className={classes.content} key={el.id}>
             <h3>{el.name}</h3>

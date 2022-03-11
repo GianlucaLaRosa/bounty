@@ -38,16 +38,56 @@ badge: 1.panino del mese 2.vegetariano 3.vegano 4.piccante
 */
 
 export const DUMMY_SECTIONS = [
-  "Birre alla spina",
-  "Sfizi",
-  "Hamburger",
-  "Gourmet",
-  "Piatti",
-  "Dolci",
-  "Bevande",
-  "Birre in bottiglia",
-  "Aperitivo",
-  "Superalcolici",
+  {
+    id: 0,
+    name: "Birre alla spina",
+    order: 0,
+  },
+  {
+    id: 1,
+    name: "Sfizi",
+    order: 1,
+  },
+  {
+    id: 2,
+    name: "Hamburger",
+    order: 2,
+  },
+  {
+    id: 3,
+    name: "Gourmet",
+    order: 3,
+  },
+  {
+    id: 4,
+    name: "Piatti",
+    order: 4,
+  },
+  {
+    id: 5,
+    name: "Dolci",
+    order: 5,
+  },
+  {
+    id: 6,
+    name: "Bevande",
+    order: 6,
+  },
+  {
+    id: 7,
+    name: "Birre in bottiglia",
+    order: 7,
+  },
+  {
+    id: 8,
+    name: "Aperitivo",
+    order: 8,
+  },
+  {
+    id: 9,
+    name: "Superalcolici",
+    order: 9,
+  },
 ];
 
 export const DUMMY_DATA = [
