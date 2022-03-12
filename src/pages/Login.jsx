@@ -1,5 +1,7 @@
 import classes from "./Login.module.css";
-import Card from "../components/layout/Card";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 import { useState } from "react";
 
 function Login() {
@@ -9,7 +11,8 @@ function Login() {
     e.preventDefault();
   }
 
-  function resetHandler() {
+  function resetHandler(e) {
+    e.preventDefault();
     setLog(undefined);
   }
 
@@ -19,17 +22,11 @@ function Login() {
         <div>
           <h2>LOG IN</h2>
         </div>
-        <div>
-          <label htmlFor="">Nome utente</label>
-          <input type="text" />
-        </div>
-        <div>
-          <label htmlFor="">Password</label>
-          <input type="password" />
-        </div>
-        <div>
-          <button onClick={resetHandler}>Reset</button>
-          <button className={classes.btnActive}>Login</button>
+        <Input label="Nome utente" type="text" id="name" />
+        <Input label="Password" type="password" id="pwd" />
+        <div className={classes.action}>
+          <Button onClick={resetHandler}>Reset</Button>
+          <Button active>Login</Button>
         </div>
       </form>
     </Card>

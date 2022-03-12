@@ -1,4 +1,4 @@
-import Card from "./layout/Card";
+import Card from "./ui/Card";
 import classes from "./Section.module.css";
 
 function Section(props) {

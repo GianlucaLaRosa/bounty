@@ -4,33 +4,11 @@
 }
 
 .form h2 {
+  text-align: center;
   margin: 0.5rem auto 1.2rem;
 }
 
-.form div {
+.action {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.form input {
-  margin: 0.8rem;
-  width: 12rem;
-  padding: 0.2rem 0.8rem;
-  background-color: #c9bb9f;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-.form button {
-  margin-top: 1rem;
-  background-color: #c9bb9f;
-  padding: 0.4rem 2rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 3px 3px 8px #00000066;
-}
-
-form .btnActive {
-  background-color: #de6523;
 }

@@ -1,0 +1,33 @@
+.btn {
+  margin-top: 1rem;
+  background-color: #a39473;
+  padding: 0.4rem 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px #00000066;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background-color: #c9bb9f;
+  color: black;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btnCta {
+  background-color: #de6523;
+}
+
+.btnCta:hover {
+  background-color: #ff833f;
+  color: black;
+}
+
+.btnCta:active {
+  box-shadow: none;
+}
