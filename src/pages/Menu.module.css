@@ -7,4 +7,5 @@
 .sections li {
   margin: 1rem;
   list-style: none;
+  cursor: pointer;
 }

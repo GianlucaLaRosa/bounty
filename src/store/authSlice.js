@@ -1,20 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const isLoggedIn = !!localStorage.getItem("token");
+let expirTimer;
+
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    token: null,
-    expirationTime: 3600,
-    isLoggedIn: false,
+    expirationTime: undefined,
+    isLoggedIn,
   },
   reducers: {
     login(state, action) {
-      if (action.payload) console.log(action);
-      console.log(action.payload[0], action.payload[1]);
-      state.isLoggedIn = true;
+      //*  payload[0] => expiration time (sec); payload[1] => token
+      if (action.payload) {
+        state.isLoggedIn = true;
+        state.expirationTime = action.payload[0];
+        localStorage.setItem("token", action.payload[1]);
+        expirTimer = setTimeout(this.reducers.logout(), 15000);
+      }
     },
     logout(state) {
       state.isLoggedIn = false;
+      localStorage.removeItem("token");
+      state.expirationTime = undefined;
     },
   },
 });

@@ -3,18 +3,20 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Menu from "./pages/Menu";
 import Login from "./components/auth/Login";
-import Signin from "./components/auth/Signin";
-
+import Settings from "./components/auth/Settings";
+import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const settIsVisible = useSelector(state => state.auth.isLoggedIn);
+
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<Signin />} />
+        {settIsVisible && <Route path="/settings" element={<Settings />} />}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
