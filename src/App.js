@@ -2,7 +2,8 @@ import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Menu from "./pages/Menu";
-import Login from "./pages/Login";
+import Login from "./components/auth/Login";
+import Signin from "./components/auth/Signin";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
