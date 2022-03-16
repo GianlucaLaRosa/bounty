@@ -17,7 +17,7 @@ function Section(props) {
             <p>
               {el.description}
               <span className={classes.allerg}>
-                &nbsp; allergeni {el.allergenes.join(",")}
+                &nbsp; allergeni {el.allergeneIds.join(",")}
               </span>
             </p>
             <p className={classes.price}>Euro {el.price}</p>
