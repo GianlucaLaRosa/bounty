@@ -1,11 +1,11 @@
 import classes from "./Login.module.css";
-import Card from "../ui/Card";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { authActions } from "../../store/authSlice";
+import { authActions } from "../store/authSlice";
 
 function Login() {
   const [log, setLog] = useState({ mail: "", pwd: "" });
@@ -19,7 +19,7 @@ function Login() {
 
   async function submitHandler(e) {
     e.preventDefault();
-
+    console.log(log);
     try {
       const response = await axios({
         method: "post",
@@ -40,13 +40,8 @@ function Login() {
         throw new Error();
       }
     } catch (err) {
-      console.error(err);
+      console.error(err.response.data.error.message);
     }
-  }
-
-  function resetHandler(e) {
-    e.preventDefault();
-    setLog({ mail: "", pwd: "" });
   }
 
   return (
@@ -70,8 +65,10 @@ function Login() {
           value={log.pwd}
         />
         <div className={classes.action}>
-          <Button onClick={resetHandler}>Reset</Button>
-          <Button active>Login</Button>
+          <Button type="reset">Reset</Button>
+          <Button type="submit" cta="true">
+            Login
+          </Button>
         </div>
       </form>
     </Card>

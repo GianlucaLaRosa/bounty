@@ -10,7 +10,7 @@ const authSlice = createSlice({
   reducers: {
     login(state, action) {
       //  payload[0] => expiration time (sec), payload[1] => token, both given by Firebase
-      let remainingTime = 20; //action.payload[0];
+      let remainingTime = action.payload[0];
       let currentTime = new Date().getTime();
       let expirationTime = new Date(currentTime + remainingTime * 1000);
 

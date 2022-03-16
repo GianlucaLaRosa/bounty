@@ -10,20 +10,21 @@ function Menu() {
     isOpen === id ? setIsOpen(null) : setIsOpen(id);
   }
 
-  const usedSections = Data.map(el => el.section);
+  const usedSections = Data.map(el => el.sectionId);
   const filteredSections = Sections.filter(el => usedSections.includes(el.id));
 
   return (
     <>
       <h1>MENU</h1>
       <ul className={classes.sections}>
+        {console.log(Data)}
         {filteredSections.map(sec => (
           <li key={sec.id}>
             <Section
               id={sec.id}
               title={sec.name}
               items={Data.filter(
-                item => item.section === Sections.indexOf(sec)
+                item => item.sectionId === Sections.indexOf(sec)
               )}
               isOpen={isOpen}
               onClick={openHandler}

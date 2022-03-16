@@ -2,8 +2,8 @@ import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Menu from "./pages/Menu";
-import Login from "./components/auth/Login";
-import Settings from "./components/auth/Settings";
+import Login from "./pages/Login";
+import Settings from "./pages/Settings";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 

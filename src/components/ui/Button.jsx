@@ -1,10 +1,10 @@
 import classes from "./Button.module.css";
 
 function Button(props) {
-  const btnClasses = `${classes.btn} ${props.active ? classes.btnCta : ""}`;
+  const btnClasses = `${classes.btn} ${props.cta ? classes.btnCta : ""}`;
 
   return (
-    <button className={btnClasses} onClick={props.onClick}>
+    <button className={btnClasses} {...props}>
       {props.children}
     </button>
   );
