@@ -8,11 +8,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/authSlice";
+import { useEffect } from "react";
 
 function Header() {
-  const settIsVisible = useSelector(state => state.auth.isLoggedIn);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(authActions.logout());
+      navigate("/");
+    }, new Date(localStorage.getItem("expir")).getTime() - new Date().getTime());
+  });
+
+  const settIsVisible = useSelector(state => state.auth.isLoggedIn);
+  //const navigate = useNavigate();
 
   function logoutHandler() {
     dispatch(authActions.logout());
@@ -31,9 +41,7 @@ function Header() {
               <Link to="/settings">
                 <FaRegChartBar />
               </Link>
-              {/* <Link to="/" onClick={logoutHandler}> */}
               <FaSignOutAlt onClick={logoutHandler} />
-              {/* </Link> */}
             </>
           )}
           <Link to="/menu">
