@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/authSlice";
 import { useEffect } from "react";
+import Timer from "./Timer";
 
 function Header() {
   const navigate = useNavigate();
@@ -21,8 +22,7 @@ function Header() {
     }, new Date(localStorage.getItem("expir")).getTime() - new Date().getTime());
   });
 
-  const settIsVisible = useSelector(state => state.auth.isLoggedIn);
-  //const navigate = useNavigate();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   function logoutHandler() {
     dispatch(authActions.logout());
@@ -34,9 +34,10 @@ function Header() {
       <Link to="/">
         <img src={logo} alt="logo bounty pub" className={classes.logo} />
       </Link>
+      {isLoggedIn && <Timer />}
       <IconContext.Provider value={{ className: classes.icon }}>
         <span>
-          {settIsVisible && (
+          {isLoggedIn && (
             <>
               <Link to="/settings">
                 <FaRegChartBar />

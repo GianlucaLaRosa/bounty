@@ -1,0 +1,14 @@
+.timer {
+  color: #c9bb9f;
+  border: 2px solid #c9bb9f;
+  border-radius: 5px;
+  padding: 0.6rem 1.6rem;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hidden {
+  display: none;
+}

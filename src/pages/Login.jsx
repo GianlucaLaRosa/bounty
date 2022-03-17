@@ -6,10 +6,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [log, setLog] = useState({ mail: "", pwd: "" });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function changeHandler(e) {
     setLog(prevLog => {
@@ -19,7 +21,6 @@ function Login() {
 
   async function submitHandler(e) {
     e.preventDefault();
-    console.log(log);
     try {
       const response = await axios({
         method: "post",
@@ -36,6 +37,7 @@ function Login() {
 
       if (response.status === 200) {
         dispatch(authActions.login([expiresIn, idToken]));
+        navigate("/settings");
       } else {
         throw new Error();
       }
