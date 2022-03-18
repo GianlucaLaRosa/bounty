@@ -100,6 +100,7 @@ export const DUMMY_DATA = [
   //     sectionId: ,
   //     adjunctIds: [],
   //     badgeIds: [],
+  //     active: ,
   // },
   {
     id: 1,
@@ -111,6 +112,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 2,
@@ -121,6 +123,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [3],
     badgeIds: [],
+    active: false,
   },
   {
     id: 3,
@@ -132,6 +135,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 4,
@@ -143,6 +147,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: false,
   },
   {
     id: 5,
@@ -154,6 +159,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 6,
@@ -164,6 +170,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 7,
@@ -174,6 +181,7 @@ export const DUMMY_DATA = [
     sectionId: 1,
     adjunctIds: [3],
     badgeIds: [],
+    active: false,
   },
   {
     id: 8,
@@ -185,6 +193,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 9,
@@ -196,6 +205,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 10,
@@ -207,6 +217,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 11,
@@ -218,6 +229,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: false,
   },
   {
     id: 12,
@@ -229,6 +241,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 13,
@@ -240,6 +253,7 @@ export const DUMMY_DATA = [
     sectionId: 2,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 14,
@@ -251,6 +265,7 @@ export const DUMMY_DATA = [
     sectionId: 3,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 15,
@@ -262,6 +277,7 @@ export const DUMMY_DATA = [
     sectionId: 3,
     adjunctIds: [1, 2, 3],
     badgeIds: [2],
+    active: false,
   },
   {
     id: 16,
@@ -273,6 +289,7 @@ export const DUMMY_DATA = [
     sectionId: 3,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 17,
@@ -284,6 +301,7 @@ export const DUMMY_DATA = [
     sectionId: 3,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 18,
@@ -295,6 +313,7 @@ export const DUMMY_DATA = [
     sectionId: 4,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 19,
@@ -306,6 +325,7 @@ export const DUMMY_DATA = [
     sectionId: 4,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: true,
   },
   {
     id: 20,
@@ -317,5 +337,6 @@ export const DUMMY_DATA = [
     sectionId: 4,
     adjunctIds: [1, 2, 3],
     badgeIds: [],
+    active: false,
   },
 ];

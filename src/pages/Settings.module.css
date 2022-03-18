@@ -1,0 +1,34 @@
+.table {
+  width: 60vw;
+  border-collapse: collapse;
+}
+
+.table tr {
+  height: 2.2rem;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #00000044;
+}
+
+.table thead {
+  background-color: #00000088;
+  color: white;
+  height: 3rem;
+}
+
+.table td {
+  text-align: center;
+}
+
+.check {
+  color: #333;
+}
+
+.header th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.header th:last-child {
+  border-radius: 0 8px 0 0;
+}
