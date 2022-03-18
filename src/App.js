@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/login" element={<Login />} />
+        {!settIsVisible && <Route path="/login" element={<Login />} />}
         {settIsVisible && <Route path="/settings" element={<Settings />} />}
         <Route path="*" element={<NotFound />} />
       </Routes>

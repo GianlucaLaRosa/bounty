@@ -16,17 +16,20 @@ function Header() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
+    let autoLogoutTimer = setTimeout(() => {
       dispatch(authActions.logout());
       navigate("/");
     }, new Date(localStorage.getItem("expir")).getTime() - new Date().getTime());
+    return () => {
+      clearTimeout(autoLogoutTimer);
+    };
   });
 
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   function logoutHandler() {
     dispatch(authActions.logout());
-    navigate("/", { replace: true });
+    navigate("/login", { replace: true });
   }
 
   return (

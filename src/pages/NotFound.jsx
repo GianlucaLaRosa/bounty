@@ -7,7 +7,10 @@ function NotFound() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => navigate("/"), 5000);
+    let notFoundTimer = setTimeout(() => navigate("/"), 5000);
+    return () => {
+      clearTimeout(notFoundTimer);
+    };
   }, [navigate]);
 
   return (
