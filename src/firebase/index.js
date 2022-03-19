@@ -21,4 +21,5 @@ export const db = getFirestore(app);
 
 export const FirebaseDocumentNames = {
   MENU: '/menu',
+  MENU_ITEMS: '/menuItems',
 };
