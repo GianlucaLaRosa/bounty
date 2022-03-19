@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/authSlice";
 import { useEffect } from "react";
-import Timer from "./Timer";
+import Timer from "../ui/Timer";
 
 function Header() {
   const navigate = useNavigate();

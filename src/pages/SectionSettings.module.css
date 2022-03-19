@@ -1,0 +1,13 @@
+.card {
+  width: 500px;
+  padding: 0.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card form {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}

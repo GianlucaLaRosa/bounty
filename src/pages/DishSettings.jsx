@@ -1,13 +1,13 @@
-import classes from "./Settings.module.css";
+import classes from "./DishSettings.module.css";
 import Card from "../components/ui/Card";
 import { FaCircle } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { DUMMY_SECTIONS as Sections, DUMMY_DATA as Data } from "../dummyDatas";
 
-function Settings() {
+function DishSettings() {
   return (
     <>
-      <h1>SETTINGS</h1>
+      <h1>MENU PIATTI</h1>
       <Card>
         <table className={classes.table}>
           <thead>
@@ -20,7 +20,7 @@ function Settings() {
           </thead>
           <tbody>
             {Data.map(dish => (
-              <tr>
+              <tr key={dish.id}>
                 <td>{dish.id}</td>
                 <td>{dish.name}</td>
                 <td className={classes.check}>
@@ -36,4 +36,4 @@ function Settings() {
   );
 }
 
-export default Settings;
+export default DishSettings;

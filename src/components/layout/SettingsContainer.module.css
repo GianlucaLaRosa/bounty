@@ -1,0 +1,36 @@
+.container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.tab {
+  text-align: center;
+  width: 12rem;
+  height: 2.8rem;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 0.6rem 1.2rem;
+  margin: 0 2px 0 0;
+  background-color: #0006;
+  box-shadow: 3px 3px 16px #0008;
+  text-decoration: none;
+  color: #fffa;
+}
+
+.activeTab {
+  text-align: center;
+  width: 12rem;
+  background-color: #c9bb9f;
+  color: #0008;
+  border: 2px solid black;
+  border-radius: 0 0 5px 5px;
+  padding: 1.6rem 1.2rem 0.6rem;
+  margin: 0 2px 0 0;
+  font-weight: bold;
+  height: 3.8rem;
+  box-shadow: 3px 3px 16px #0008;
+  text-decoration: none;
+  transform: scale(110%);
+}
