@@ -1,34 +1,35 @@
 import { getMenuItems, getMenuSections } from '../api/menu';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useMenuIsFetchingSelector, useMenuSelector } from '../store/menu/menu.selectors';
+import { useMenuIsFetchingSelector, useMenuTreeSelector } from '../store/menu/menu.selectors';
 import { fetchMenu, fetchMenuFailure, fetchMenuSuccess } from '../store/menu/menu.slice';
 
 export const useMenu = () => {
   const dispatch = useDispatch();
-  const menuTree = useMenuSelector();
+  const menuTree = useMenuTreeSelector();
   const menuIsFetching = useMenuIsFetchingSelector();
 
   useEffect(() => {
-    (async () => {
+      (async () => {
 
-      if(menuTree.length) {
-        // This prevents the menu to be refetched if we've already fetched on load of the app
-        return;
-      }
+        if(menuTree.length) {
+          // This prevents the menu to be refetched if we've already fetched on load of the app
+          return;
+        }
 
-      try {
-        dispatch(fetchMenu());
-        const [items, sections] = await Promise.all([getMenuItems(), getMenuSections()]);
-        dispatch(fetchMenuSuccess({ items, sections }));
-      } catch(err) {
-        console.log(err);
-        dispatch(fetchMenuFailure());
-      }
+        try {
+          dispatch(fetchMenu());
+          const [items, sections] = await Promise.all([getMenuItems(), getMenuSections()]);
+          dispatch(fetchMenuSuccess({ items, sections }));
+        } catch(err) {
+          console.log(err);
+          dispatch(fetchMenuFailure());
+        }
 
-    })();
+      })();
 
-  }, [dispatch]);
+    },
+    [dispatch, menuTree.length]);
 
   return { menuTree, menuIsFetching };
 };
