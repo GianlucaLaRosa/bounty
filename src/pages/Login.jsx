@@ -3,10 +3,11 @@ import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import { useState } from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 function Login() {
   const [log, setLog] = useState({ mail: "", pwd: "" });
@@ -22,27 +23,18 @@ function Login() {
   async function submitHandler(e) {
     e.preventDefault();
     try {
-      const response = await axios({
-        method: "post",
-        url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
-        data: {
-          email: log.mail,
-          password: log.pwd,
-          returnSecureToken: true,
-        },
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const { expiresIn, idToken } = response.data;
-
-      if (response.status === 200) {
-        dispatch(authActions.login([expiresIn, idToken]));
+      await signInWithEmailAndPassword(auth, log.mail, log.pwd);
+      let currUser = auth.currentUser;
+      let expirTime = currUser.stsTokenManager.expirationTime;
+      let uid = currUser.uid;
+      if (currUser) {
+        dispatch(authActions.login({ expirTime, uid }));
         navigate("/settings");
       } else {
         throw new Error();
       }
     } catch (err) {
-      console.error(err.response.data.error.message);
+      console.error(err);
     }
   }
 

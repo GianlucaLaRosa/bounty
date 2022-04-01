@@ -1,6 +1,7 @@
 // Initialize Firebase App
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,8 +19,11 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firestore
 export const db = getFirestore(app);
 
-
 export const FirebaseDocumentNames = {
-  MENU: '/menu',
-  MENU_ITEMS: '/menuItems',
+  MENU: "/menu",
+  MENU_ITEMS: "/menuItems",
 };
+
+//Initialize Firebase Auth
+
+export const auth = getAuth(app);
