@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
-const isLoggedIn = !!localStorage.getItem("token");
+const isLoggedIn = !!localStorage.getItem("uid");
 
 const authSlice = createSlice({
   name: "auth",
@@ -9,21 +11,19 @@ const authSlice = createSlice({
   },
   reducers: {
     login(state, action) {
-      //  payload[0] => expiration time (sec), payload[1] => token, both given by Firebase
-      let remainingTime = action.payload[0];
-      let currentTime = new Date().getTime();
-      let expirationTime = new Date(currentTime + remainingTime * 1000);
+      let expirationTime = new Date(action.payload.expirTime);
 
       if (action.payload) {
         state.isLoggedIn = true;
         localStorage.setItem("expir", expirationTime);
-        localStorage.setItem("token", action.payload[1]);
+        localStorage.setItem("uid", action.payload.uid);
       }
     },
     logout(state) {
+      signOut(auth);
       state.isLoggedIn = false;
-      localStorage.removeItem("token");
       localStorage.removeItem("expir");
+      localStorage.removeItem("uid");
     },
   },
 });

@@ -6,7 +6,7 @@ function Input(props) {
   return (
     <div className={classes.container}>
       <label htmlFor={id}>{label}</label>
-      <input type={type} name={id} onChange={onChange} value={value} />
+      <input type={type} name={id} id={id} onChange={onChange} value={value} />
     </div>
   );
 }

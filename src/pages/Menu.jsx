@@ -1,37 +1,38 @@
-import { DUMMY_SECTIONS as Sections, DUMMY_DATA as Data } from "../dummyDatas";
 import classes from "./Menu.module.css";
 import Section from "../components/Section";
 import { useState } from "react";
+import { useMenu } from "../hooks/useMenu";
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(null);
+  const { menuTree, menuIsFetching } = useMenu();
 
   function openHandler(id) {
     isOpen === id ? setIsOpen(null) : setIsOpen(id);
   }
 
-  const usedSections = Data.map(el => el.sectionId);
-  const filteredSections = Sections.filter(el => usedSections.includes(el.id));
-
   return (
     <>
       <h1>MENU</h1>
-      <ul className={classes.sections}>
-        {console.log(Data)}
-        {filteredSections.map(sec => (
-          <li key={sec.id}>
-            <Section
-              id={sec.id}
-              title={sec.name}
-              items={Data.filter(
-                item => item.sectionId === Sections.indexOf(sec)
-              )}
-              isOpen={isOpen}
-              onClick={openHandler}
-            />
-          </li>
-        ))}
-      </ul>
+      {menuIsFetching && <span>Loading dishes...</span>}{" "}
+      {/*TODO: Create component*/}
+      {!menuTree && <span>No dishes, sorry!</span>}{" "}
+      {/* TODO: Create component*/}
+      {menuTree && (
+        <ul className={classes.sections}>
+          {menuTree.map(section => (
+            <li key={section.id}>
+              <Section
+                id={section.id}
+                title={section.name}
+                items={section.items}
+                isOpen={isOpen}
+                onClick={openHandler}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
