@@ -1,93 +1,21 @@
 import classes from "./SectionSettings.module.css";
 import Card from "../components/ui/Card";
+import ItemsTable from "../components/layout/ItemsTable";
+import { useMenu } from "../hooks/useMenu";
+
 function SectionSettings() {
+  const { menuTree, menuIsFetching } = useMenu();
+
   return (
     <>
-      <h1>IMPOSTAZIONI SEZIONI</h1>
-      <Card>
-        <div className={classes.card}>
-          <h2>Salse</h2>
-
-          <form>
-            <div>
-              <label>Attivo</label>
-              <input type="checkbox"></input>
-            </div>
-            <div>
-              <label>Ordine</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <div className={classes.card}>
-          <h2>Sfizi</h2>
-
-          <form>
-            <div>
-              <label>Attivo</label>
-              <input type="checkbox" checked></input>
-            </div>
-            <div>
-              <label>Ordine</label>
-              <select>
-                <option>1</option>
-                <option selected>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <div className={classes.card}>
-          <h2>Hamburger</h2>
-
-          <form>
-            <div>
-              <label>Attivo</label>
-              <input type="checkbox" checked></input>
-            </div>
-            <div>
-              <label>Ordine</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option selected>3</option>
-                <option>4</option>
-              </select>
-            </div>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <div className={classes.card}>
-          <h2>Gourmet</h2>
-
-          <form>
-            <div>
-              <label>Attivo</label>
-              <input type="checkbox" checked></input>
-            </div>
-            <div>
-              <label>Ordine</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option selected>4</option>
-              </select>
-            </div>
-          </form>
-        </div>
-      </Card>
+      <h1>MENU PIATTI</h1>
+      {menuIsFetching && <span>Loading sections...</span>}
+      {!menuTree && <span>No sections, sorry!</span>}
+      {menuTree && (
+        <Card>
+          <ItemsTable items={menuTree.map(section => section)} />
+        </Card>
+      )}
     </>
   );
 }

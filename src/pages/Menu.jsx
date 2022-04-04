@@ -10,7 +10,6 @@ function Menu() {
   function openHandler(id) {
     isOpen === id ? setIsOpen(null) : setIsOpen(id);
   }
-
   return (
     <>
       <h1>MENU</h1>

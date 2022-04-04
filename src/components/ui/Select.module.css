@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.container select {
+  margin: 0.8rem 0;
+  width: 100%;
+  padding: 0.2rem 0.8rem;
+  background-color: #615b4d;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.container select:focus {
+  outline: none;
+  border: 1px solid #de6523;
+}

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.container textarea {
+  margin: 0.8rem 0;
+  width: 100%;
+  height: 5rem;
+  padding: 0.2rem 0.8rem;
+  background-color: #615b4d;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  resize: none;
+}
+
+.container texterea:focus-visible {
+  outline: none;
+  border: 1px solid #de6523;
+}

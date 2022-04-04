@@ -10,7 +10,7 @@ import BeerSettings from "./pages/BeerSettings";
 import Help from "./pages/Help";
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import AddItem from "./pages/AddItem";
 function App() {
   const settIsVisible = useSelector(state => state.auth.isLoggedIn);
 
@@ -24,6 +24,7 @@ function App() {
           <Route path="/settings/*" element={<SettingsContainer />}>
             <Route path="beers" element={<BeerSettings />} />
             <Route path="dishes" element={<DishSettings />} />
+            <Route path="addItem" element={<AddItem />} />
             <Route path="sections" element={<SectionSettings />} />
             <Route path="help" element={<Help />} />
             <Route path="*" element={<Navigate to="/settings/beers" />} />

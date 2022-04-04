@@ -1,37 +1,25 @@
 import classes from "./DishSettings.module.css";
 import Card from "../components/ui/Card";
-import { FaCircle } from "react-icons/fa";
-import { FaCheckCircle } from "react-icons/fa";
-import { DUMMY_SECTIONS as Sections, DUMMY_DATA as Data } from "../dummyDatas";
+import ItemsTable from "../components/layout/ItemsTable";
+import { useMenu } from "../hooks/useMenu";
+import Button from "../components/ui/Button";
+import { Link } from "react-router-dom";
 
 function DishSettings() {
+  const { menuTree, menuIsFetching } = useMenu();
   return (
     <>
       <h1>MENU PIATTI</h1>
-      <Card>
-        <table className={classes.table}>
-          <thead>
-            <tr className={classes.header}>
-              <th>ID</th>
-              <th>NOME</th>
-              <th>ATTIVO</th>
-              <th>PREZZO</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Data.map(dish => (
-              <tr key={dish.id}>
-                <td>{dish.id}</td>
-                <td>{dish.name}</td>
-                <td className={classes.check}>
-                  {dish.active ? <FaCheckCircle /> : <FaCircle />}
-                </td>
-                <td>{dish.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Card>
+      <Link to="/settings/addItem">
+        <Button cta> Aggiungi piatto</Button>
+      </Link>
+      {menuIsFetching && <span>Loading dishes...</span>}
+      {!menuTree && <span>No dishes, sorry!</span>}
+      {menuTree && (
+        <Card>
+          <ItemsTable items={menuTree.map(section => section.items).flat()} />
+        </Card>
+      )}
     </>
   );
 }

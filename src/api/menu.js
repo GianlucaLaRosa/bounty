@@ -12,7 +12,6 @@ export async function getMenuSections() {
   const menuSectionListSnapshot = await getDocs(
     collection(db, FirebaseDocumentNames.MENU)
   );
-  console.log(menuSectionListSnapshot.docs.id);
   return menuSectionListSnapshot.docs.map(doc => ({
     id: doc.id,
     ...doc.data(),
