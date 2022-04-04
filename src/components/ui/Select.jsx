@@ -7,7 +7,7 @@ function Select(props) {
       <label htmlFor={id}>{label}</label>
       <select id={id} name={id}>
         {items.map(el => (
-          <option>{el.name}</option>
+          <option key={el.id}>{el.name}</option>
         ))}
       </select>
     </div>

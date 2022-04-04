@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card {
+  margin: 0.8rem 0;
+  height: 8rem;
+  width: 100%;
+  background-color: #615b4d;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.6rem 2rem;
+  overflow-y: scroll;
+  scrollbar-color: #454035;
+  color: white;
+}
+
+.card::-webkit-scrollbar {
+  width: 15px;
+  height: 18px;
+  background-color: #454035;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background-color: #9f957e;
+}
+
+.container label {
+  font-weight: bold;
+}
+.card label {
+  font-weight: normal;
+}

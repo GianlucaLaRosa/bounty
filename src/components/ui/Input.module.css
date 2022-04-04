@@ -4,13 +4,20 @@
   align-items: flex-start;
 }
 
+.hor {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 8rem;
+}
+
 .container label {
   font-weight: bold;
 }
 
 .container input {
-  margin: 0.8rem 0;
   width: 100%;
+  margin: 0.8rem 0;
   padding: 0.2rem 0.8rem;
   background-color: #615b4d;
   color: white;
@@ -21,4 +28,9 @@
 .container input:focus {
   outline: none;
   border: 1px solid #de6523;
+}
+
+input[type="checkbox"] {
+  filter: hue-rotate(150deg) brightness(1.8);
+  width: auto;
 }

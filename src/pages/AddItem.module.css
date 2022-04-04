@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section button {
+  margin-top: 1.2rem;
+  height: 1.6rem;
+  width: 0.8rem;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action {
+  margin-top: 2rem;
+}
